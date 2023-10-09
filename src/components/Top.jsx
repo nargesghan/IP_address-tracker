@@ -1,8 +1,8 @@
 import React from "react";
 import "./Top.css";
 import { useState } from "react";
-
-function submit(ev,ip){
+import Output from "./Output";
+function submit(ev,ip,setData){
   ev.preventDefault();
   const [input] = ev.target.children
     fetch(
@@ -11,26 +11,27 @@ function submit(ev,ip){
       .then((Response) => {
         return Response.json();
       })
-      .then((data)=>console.log(data));
+      .then((data)=>{setData(data)});
       console.log(ip);
   }
 
-const Top = () => {
-  const [ip,setIp]=useState('');
-
+const Top = ({ip,setIP}) => {
+  
+  const [data, setData] = useState(null);
   return (
     <div className="container">
       <div className="topImage">
         <h1 className="title">IP Address Tracker</h1>
-        <form onSubmit={(ev)=>submit(ev,ip)}>
+        <form onSubmit={(ev)=>submit(ev,ip,setData)}>
           <input
             className="input"
             placeholder="search for any IP address or domain"
-            onChange={(e)=>{setIp(e.target.value)}}
+            onChange={(e)=>{setIP(e.target.value)}}
           ></input>
-          <button className="enter">&gt;</button>
+          <button className="enter"  type='submit'>&gt;</button>
         </form>
       </div>
+      <Output ipinformation={data}/>
     </div>
   );
 };
