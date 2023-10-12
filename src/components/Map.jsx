@@ -2,11 +2,10 @@ import React from 'react'
 import { MapContainer ,TileLayer,Marker,Popup} from 'react-leaflet';
 import '../App.css';
 import 'leaflet/dist/leaflet.css'
-const Map = () => {
+const Map = ({ipinformation}) => {
 
 
-
-      const position = [51.505, -0.09]
+    const position = ipinformation && ipinformation.location ? [ipinformation.location.lat, ipinformation.location.lng] : [0, 0];
   return (
     <MapContainer center={position} zoom={13} scrollWheelZoom={false}>
     <TileLayer
@@ -15,7 +14,7 @@ const Map = () => {
     />
     <Marker position={position}>
       <Popup>
-        A pretty CSS3 popup. <br /> Easily customizable.
+        IP location,{position[0]}
       </Popup>
     </Marker>
   </MapContainer>

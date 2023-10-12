@@ -35,7 +35,7 @@ const Top = ({ip,setIP}) => {
       </div>
       <div className={styles.output}><Output ipinformation={data}/></div>
       </div>
-      <div className={styles.map}><Map></Map></div>
+      <div className={styles.map}><Map ipinformation={data}></Map></div>
     
     </div>
   );
