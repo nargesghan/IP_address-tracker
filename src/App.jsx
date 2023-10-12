@@ -11,7 +11,7 @@ function App() {
     <>
     {/* <form onSubmit={(ev)=>submit(ev,ip)}> <input  onChange={(e)=>{setIp(e.target.value)}} type="text" placeholder="8.8.8.8"></input><input type="submit"></input></form> */}
       <Top ip={ip} setIP={setIP}/>
-      <Output/>
+     
     </>
   );
 }

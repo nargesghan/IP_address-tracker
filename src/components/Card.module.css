@@ -1,0 +1,20 @@
+.title{
+    font-family:'Rubik', 'sans-serif' ;
+    font-weight: 700;
+    font-size: 12px;
+    color:rgb(126, 128, 134);
+    text-align: center;
+
+}
+
+.data{
+    font-family:'Rubik', 'sans-serif' ;
+    font-weight: 700;
+    font-size: 20x;
+    text-align: center;
+    line-height: 30px;
+}
+
+.cardContainer{
+    padding:10px;
+}
